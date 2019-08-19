@@ -28,9 +28,17 @@ class GHAapp < Sinatra::Application
     set :logging, Logger::DEBUG
   end
 
+  get '/create-branch-from-issue' do
+    "ok"
+  end
+
+  get '/create-branch-from-issue/' do
+    "ok"
+  end
+
 
   # Executed before each request to the `/event_handler` route
-  before '/event_handler' do
+  before '/create-branch-from-issue/event_handler' do
     get_payload_request(request)
     verify_webhook_signature
     authenticate_app
@@ -39,7 +47,7 @@ class GHAapp < Sinatra::Application
   end
 
 
-  post '/event_handler' do
+  post '/create-branch-from-issue/event_handler' do
 
     case request.env['HTTP_X_GITHUB_EVENT']
     when 'issues'
