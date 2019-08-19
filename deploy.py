@@ -16,6 +16,12 @@ COMMON_TASK_DEF = {
             'containerPort': 5000
         },
     ],
+    'environment': [
+        {
+            'name': 'APP_ENV',
+            'value': 'production'
+        },
+    ],
     'essential': True,
     'command': [
         'ruby',
