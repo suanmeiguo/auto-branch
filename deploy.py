@@ -11,10 +11,15 @@ COMMON_TASK_DEF = {
     'image': IMAGE,
     'cpu': 64,
     'memory': 128,
+    'portMappings': [
+        {
+            'containerPort': 5000
+        },
+    ],
     'essential': True,
     'command': [
-        'python',
-        'visadiscount.py'
+        'ruby',
+        'server.rb'
     ],
     'workingDirectory': '/app'
 }
